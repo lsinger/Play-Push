@@ -148,7 +148,6 @@
 
 - (void)connection:(CPURLConnection)aConnection didReceiveData:(CPString)data
 {
-	[_chatTextField setObjectValue:@""];
 }
 
 - (void)postMessage
@@ -156,6 +155,7 @@
 	// Encodes the data for submission to the server
 	var theSender = encodeURI(_nickname);
 	var theBody = encodeURI([_chatTextField objectValue]);
+	[_chatTextField setObjectValue: @""];
 	var messageHTTP = "m.sender=" + theSender + "&m.body=" + theBody;
 	
 	// Sends the new message to the server
