@@ -91,47 +91,16 @@
 	[_tableView setHeaderView: nil];
 	[_tableView setCornerView: nil];
 	
-	// Add the message View
-	/*
-	var messageItem = [[CPCollectionViewItem alloc] init];
-	[messageItem setView:[[messageCell alloc] initWithFrame:CGRectMakeZero()]];
-	
-	// Add the messages collection view
-	_messagesCollectionView = [[CPCollectionView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth([_chatPanel bounds]), CGRectGetHeight([_chatPanel bounds]))];
-	[_messagesCollectionView setMinItemSize:CGSizeMake(CGRectGetWidth(bounds)-20, 20.0)];
-	[_messagesCollectionView setMaxItemSize:CGSizeMake(CGRectGetWidth(bounds)-20, 20.0)];
-	[_messagesCollectionView setDelegate:self];
-	[_messagesCollectionView setItemPrototype:messageItem];
-	[_chatPanel setDocumentView:_messagesCollectionView];
-	*/
-	
 	// Add the chat Textfield
 	_chatTextField = [CPTextField roundedTextFieldWithStringValue:@"" placeholder:@"Enter a message. " width:CGRectGetWidth(bounds)-20];
 	[_chatTextField setAction:@selector(postMessage)];
 	[_chatTextField setAutoresizingMask: CPViewWidthSizable | CPViewMinYMargin];
 	[_chatTextField setFrameOrigin:CGPointMake(10, CGRectGetHeight(bounds)-45)];
-	//[_chatTextField setHidden:YES];
+	[_chatTextField setHidden:YES];
 	[_contentView addSubview:_chatTextField];
     
     [theWindow orderFront: self];
     //[theWindow makeFirstResponder: _nicknameTextField];
-}
-
-// ---
-// CPTableView delegate methods
-
-- (int)numberOfRowsInTableView: (CPTableView)tableView
-{
-    return [_messages count];
-}
-
-- (id)tableView:(CPTableView)tableView objectValueForTableColumn:(CPTableColumn)tableColumn row:(int)row
-{
-    if ( [tableColumn identifier] === @"sender" ) {
-        return _messages[row].sender;
-    } else {
-        return _messages[row].body;
-    }
 }
 
 - (void)saveNickname {
@@ -176,6 +145,23 @@
 	[_messagesCollectionView setContent:_messages];
 	// scroll down
 	[[_chatPanel documentView] scrollRectToVisible: CGRectMake(0, CGRectGetHeight([[_chatPanel documentView] bounds])-1, 1, 1)];
+}
+
+// ---
+// CPTableView delegate methods
+
+- (int)numberOfRowsInTableView: (CPTableView)tableView
+{
+    return [_messages count];
+}
+
+- (id)tableView:(CPTableView)tableView objectValueForTableColumn:(CPTableColumn)tableColumn row:(int)row
+{
+    if ( [tableColumn identifier] === @"sender" ) {
+        return _messages[row].sender;
+    } else {
+        return _messages[row].body;
+    }
 }
 
 @end
