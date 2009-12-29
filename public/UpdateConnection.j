@@ -30,7 +30,7 @@
         var newMessages = JSON.parse(data);
         [[[CPApplication sharedApplication] delegate] renderUpdates:newMessages];
         newTimestamp = newMessages[newMessages.length - 1].ts;
-    } catch(err) {
+    } catch(error) {
         newTimestamp = lastTimestamp;
         setTimeout(function(){CPLog.debug("Connection broke with error \"" + error + "\"; waiting a second. ")}, 1000);
     }
