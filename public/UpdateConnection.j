@@ -5,22 +5,22 @@
 
 - (void)init
 {
-	return [self initWithTimestamp: Math.round([[CPDate date] timeIntervalSince1970])];
+    return [self initWithTimestamp: Math.round([[CPDate date] timeIntervalSince1970])];
 }
 
 - (void)initWithTimestamp:(long)aTimestamp
 {
-	self = [super init];
-	
-	if (self) {
-		var request = [[CPURLRequest alloc] initWithURL:"/messages/since/" + aTimestamp];
-		[request setHTTPMethod:"POST"];
-		[request setValue:"application/x-www-form-urlencoded" forHTTPHeaderField:"Content-Type"];
-		var connection = [CPURLConnection connectionWithRequest:request delegate:self];
-	    lastTimestamp = aTimestamp;
-	}
-	
-	return self;
+    self = [super init];
+    
+    if (self) {
+        var request = [[CPURLRequest alloc] initWithURL:"/messages/since/" + aTimestamp];
+        [request setHTTPMethod:"POST"];
+        [request setValue:"application/x-www-form-urlencoded" forHTTPHeaderField:"Content-Type"];
+        var connection = [CPURLConnection connectionWithRequest:request delegate:self];
+        lastTimestamp = aTimestamp;
+    }
+    
+    return self;
 }
 
 - (void)connection:(CPURLConnection)aConnection didReceiveData:(CPString)data
