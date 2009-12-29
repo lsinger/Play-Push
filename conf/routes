@@ -1,0 +1,14 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+*       /messages/list                         Messages.list
+*       /messages/since/{timestamp}            Messages.since
+*       /messages/add                          Messages.add
+
+# Map static resources from the /app/public folder to the / path
+GET     /                                       staticDir:public
+
+
+# Catch all
+*       /{controller}/{action}                  {controller}.{action}

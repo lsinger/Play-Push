@@ -1,0 +1,7 @@
+Found ${ms.size} messages.
+
+#{list items:ms, as:'m'}
+<p>
+	<strong>${m.id} - ${m.sender}:</strong> ${m.body}
+</p>
+#{/list}
