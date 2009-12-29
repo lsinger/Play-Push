@@ -99,6 +99,12 @@
     [_chatTextField setHidden:YES];
     [_contentView addSubview:_chatTextField];
     
+    // add Play! badge
+    var playBadge = [[CPImageView alloc] initWithFrame: CGRectMake(CGRectGetWidth(bounds)-139, 15, 124, 25)];
+    [playBadge setImage: [[CPImage alloc] initWithContentsOfFile: @"Resources/play.png" size: CGSizeMake(124, 25)]];
+    [playBadge setAutoresizingMask: CPViewMinXMargin | CPViewMaxYMargin];
+    [_contentView addSubview: playBadge];
+    
     [theWindow orderFront: self];
     //[theWindow makeFirstResponder: _nicknameTextField];
 }
