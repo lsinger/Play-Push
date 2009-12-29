@@ -8,7 +8,3 @@
 
 # Map static resources from the /app/public folder to the / path
 GET     /                                       staticDir:public
-
-
-# Catch all
-*       /{controller}/{action}                  {controller}.{action}
