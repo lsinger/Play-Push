@@ -18,7 +18,7 @@ public class Messages extends Controller {
 		if ( ms.size() > 0 ) {
 			renderJSON(ms);
 		}
-		suspend("1s");
+		suspend(50);
 	}
 	
 	public static void list() {
