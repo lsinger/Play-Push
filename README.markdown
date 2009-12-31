@@ -21,7 +21,7 @@ Follow the instructions at http://www.playframework.org/documentation/1.0/instal
 
 __2. Clone this repository__
 
-Clone or download this repository, you probably know how. 
+Clone or download this repository, you probably know how (hint: there is a link titled "Download Source" in the upper right of the page). 
 
 __3. Start the Play! application__
 
