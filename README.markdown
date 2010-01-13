@@ -17,7 +17,7 @@ Thanks a lot for sharing, Elias!
 
 __1. Download and install Play!__
 
-Follow the instructions at http://www.playframework.org/documentation/1.0/install -- but *use a nightly build of the 1.1 branch* with a version of at least 722 or check out the trunk of the 1.1 branch and build Play! from source. Download the nightly build here: http://download.playframework.org/1.1-nightly/
+Follow the instructions at http://www.playframework.org/documentation/1.0/install -- but *use a nightly build of the 1.1 branch* with a version of at least 722 or check out the trunk of the 1.1 branch and build Play! from source. Download the nightly build here: http://download.playframework.org/1.1-nightly/ Once Play! 1.1 is out, you may of course use the official release. 
 
 __2. Clone this repository__
 
